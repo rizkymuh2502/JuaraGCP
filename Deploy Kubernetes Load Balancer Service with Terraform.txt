@@ -1,0 +1,7 @@
+Execute this command before Step "Initialize and install dependencies"
+
+
+cat > terraform.tfvars <<EOF
+gke_username = "admin"
+gke_password = "$(openssl rand -base64 16)"
+EOF

@@ -1,0 +1,32 @@
+gsutil cp gs://cloud-training/gsp323/lab.csv .
+gsutil cp gs://cloud-training/gsp323/lab.schema .
+
+cat lab.schema
+copy 
+
+   [
+        {"type":"STRING","name":"guid"},
+        {"type":"BOOLEAN","name":"isActive"},
+        {"type":"STRING","name":"firstname"},
+        {"type":"STRING","name":"surname"},
+        {"type":"STRING","name":"company"},
+        {"type":"STRING","name":"email"},
+        {"type":"STRING","name":"phone"},
+        {"type":"STRING","name":"address"},
+        {"type":"STRING","name":"about"},
+        {"type":"TIMESTAMP","name":"registered"},
+        {"type":"FLOAT","name":"latitude"},
+        {"type":"FLOAT","name":"longitude"}
+    ]
+
+If failed to create dataflow, add user permission on IAM 
++ IAM & Admin 	> ADD 
+		> New Members : <ACCOUNT MEMBER>
+		> Select Role : Dataflow Worker
+		> Save
+
+If failed to create a cluster on Dataproc, add user permission on IAM
++ IAM & Admin 	> ADD 
+		> New Members : <ACCOUNT MEMBER>
+		> Select Role : Project > Editor
+		> Save
